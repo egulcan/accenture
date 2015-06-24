@@ -1,4 +1,7 @@
 import java.util.Comparator;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class MiniDatabase implements Comparator<MiniDatabase> {
 	private
@@ -6,17 +9,18 @@ public class MiniDatabase implements Comparator<MiniDatabase> {
 		String firstName;
 		String lastName;
 		String department;
-		String accountEndDate;
+		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+		Date accountEndDate;
 		String phoneNumber;
 		
 	public MiniDatabase(String initUserName, String initFirstName, String initLastName, String initDepartment,
-						String initAccountEndDate, String initPhoneNumber)
+						String initAccountEndDate, String initPhoneNumber) throws ParseException
 	{
 		userName = initUserName;
 		firstName = initFirstName;
 		lastName = initLastName;
 		department = initDepartment;
-		accountEndDate = initAccountEndDate;
+		accountEndDate = sdformat.parse(initAccountEndDate);
 		phoneNumber = initPhoneNumber;
 	}
 		
@@ -40,7 +44,7 @@ public class MiniDatabase implements Comparator<MiniDatabase> {
 		return department;
 	}
 	
-	public String getAccountEndDate()
+	public Date getAccountEndDate()
 	{
 		return accountEndDate;
 	}

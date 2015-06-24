@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.text.ParseException;
 
 
 //import java.io.*;
@@ -8,7 +9,7 @@ import java.io.IOException;
 
 public class MainClass {
 	
-	public static void main (String[] args) throws FileNotFoundException, IOException
+	public static void main (String[] args) throws FileNotFoundException, IOException, ParseException
 	{
 		String fileName = "src/test.csv";
 		CsvReader createDatabase = new CsvReader();

@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;  
 import java.io.FileReader;  
 import java.io.IOException;  
+import java.text.ParseException;
 import java.util.ArrayList;  
 import java.util.Collections;
 import java.util.List;  
@@ -13,7 +14,7 @@ public class CsvReader {
 	public List<MiniDatabase> miniDbList = new ArrayList<MiniDatabase>();
 	public int numLines;
 	
-	public int loadData(String fileName) throws FileNotFoundException, IOException
+	public int loadData(String fileName) throws FileNotFoundException, IOException, ParseException
 	{
 		String line = "";
 		String splitChar = ";";
@@ -51,6 +52,13 @@ public class CsvReader {
 				}
 			}
 		}
+		
+		Collections.sort(results,new Comparator<MiniDatabase>(){
+			public int compare(MiniDatabase comp1, MiniDatabase comp2){
+
+				return comp1.accountEndDate.compareTo(comp2.accountEndDate);
+				}
+		});
 		
 		MiniDatabase[] miniDbArray = new MiniDatabase[numResults];
 		miniDbArray = results.toArray(miniDbArray);
