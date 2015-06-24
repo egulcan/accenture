@@ -15,8 +15,10 @@ public class MainClass {
 		CsvReader createDatabase = new CsvReader();
 		
 		createDatabase.loadData(fileName);	
-		createDatabase.findByName("Ege", "Gulcan");
+		createDatabase.findByName("Ege", "Gülcan");
 		createDatabase.findByDepartment("Engineering");
+		createDatabase.findByPhone("+90 532 5166668");
+		createDatabase.findEndDate("2015-05-01", "2015-10-10");
 	}
 	
 	

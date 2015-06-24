@@ -4,14 +4,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class MiniDatabase implements Comparator<MiniDatabase> {
-	private
-		String userName;
-		String firstName;
-		String lastName;
-		String department;
-		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
-		Date accountEndDate;
-		String phoneNumber;
+	
+	private	String userName;
+	private	String firstName;
+	private	String lastName;
+	private	String department;
+	private	SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
+	private	Date accountEndDate;
+	private	String phoneNumber;
 		
 	public MiniDatabase(String initUserName, String initFirstName, String initLastName, String initDepartment,
 						String initAccountEndDate, String initPhoneNumber) throws ParseException
